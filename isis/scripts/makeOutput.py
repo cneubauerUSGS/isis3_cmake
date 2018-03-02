@@ -33,7 +33,7 @@ if "_unit_" in sys.argv[1]:
     os.system(unitTestExecutable + ">&" + unitTestPath + "/" + unitTestName)
     print("Unit Test Output In " + unitTestPath + " As " + unitTestName)
 
-    if sys.argc >= 3 and sys.argv[2] == "truth":
+    if len(sys.argv) >= 3 and sys.argv[2] == "truth":
         with open(builddir + "/objects/CTestTestfile.cmake") as testFile:
             for line in testFile:
                 if unitTestName in line:
