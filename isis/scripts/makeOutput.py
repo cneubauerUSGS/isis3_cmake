@@ -9,8 +9,7 @@ where testname is the cmake name for the unit or app test
 To check in truth data the command should be in the form of:
     python makeOutput.py testName truth
 
-The unit tests are pretty trivial because the executable outputs the results of
-the unitTest to stdout and stderr so we just redirect the streams to the file
+The unit tests stdout and stderr is redirected to the file
 named object.truth where object is the ISIS object being tested.
 
 '''
