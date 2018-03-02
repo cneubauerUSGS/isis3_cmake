@@ -28,7 +28,7 @@ if "_unit_" in sys.argv[1]:
     unitTestExecutable = sys.argv[1]
 
     unitTestName = unitTestExecutable.split("_test_")[1] + ".truth"
-    unitTestPath = builddir += "/unitTest"
+    unitTestPath = builddir + "/unitTest"
 
     os.system(unitTestExecutable + ">&" + unitTestPath + "/" + unitTestName)
     print("Unit Test Output In " + unitTestPath + " As " + unitTestName)
