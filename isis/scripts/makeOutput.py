@@ -30,7 +30,7 @@ if "_unit_" in sys.argv[1]:
     unitTestName = unitTestExecutable.split("_test_")[1] + ".truth"
     unitTestPath = builddir + "/unitTest"
 
-    os.system(unitTestExecutable + ">&" + unitTestPath + "/" + unitTestName)
+    os.system(unitTestPath + unitTestExecutable + ">&" + unitTestPath + "/" + unitTestName)
     print("Unit Test Output In " + unitTestPath + " As " + unitTestName)
 
     if len(sys.argv) >= 3 and sys.argv[2] == "truth":
