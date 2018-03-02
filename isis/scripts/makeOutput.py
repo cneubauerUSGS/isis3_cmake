@@ -28,14 +28,12 @@ if "_unit_" in sys.argv[1]:
     unitTestExecutable = sys.argv[1]
 
     unitTestName = unitTestExecutable.split("_test_")[1] + ".truth"
-    unitTestPath = unitTestExecutable.split("/")
-    del unitTestPath[-1]
-    unitTestPath = "/".join(unitTestPath)
+    unitTestPath = builddir += "/unitTest"
 
     os.system(unitTestExecutable + ">&" + unitTestPath + "/" + unitTestName)
     print("Unit Test Output In " + unitTestPath + " As " + unitTestName)
 
-    if sys.argv[2] == "truth":
+    if sys.argc >= 2 and sys.argv[2] == "truth":
         with open(builddir + "/objects/CTestTestfile.cmake") as testFile:
             for line in testFile:
                 if unitTestName in line:
